@@ -1,16 +1,12 @@
 ﻿#include "MainWindow.h"
 #include "./ui_MainWindow.h"
 
-#include<QString>
-#include<QLabel>
-
 #include<io.h>
 #include<vector>
 
-#include<opencv2/opencv.hpp>
-#include <opencv2/imgproc/types_c.h>
-
 #include"Config.h"
+
+#include"Cout.h"
 
 
 MainWindow::MainWindow(QWidget *parent)
@@ -19,8 +15,8 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     
-    connect(ui->lw_images, &QListWidget::itemClicked, [this](auto item){
-        this->showImage(item->text().toStdString());
+    connect(ui->lw_images, &QListWidget::itemClicked, [this](auto item){        
+        this->ui->lb_view->showImage(item->text().toStdString());
     });
     
     this->getImageList();
@@ -59,13 +55,25 @@ void MainWindow::getImageList()
     
 }
 
-void MainWindow::showImage(std::string fileName)
+void MainWindow::keyPressEvent(QKeyEvent *e)
 {
-    std::string tmp;    
-    
-    auto img = cv::imread(tmp.assign(Config::imageDirectory).append("\\").append(fileName));
-    cv::cvtColor(img, img, CV_BGR2RGB);
-    QImage qImg = QImage(static_cast<const uchar*>(img.data), img.cols, img.rows, img.cols * img.channels(), QImage::Format_RGB888);
-    
-    ui->lb_view->setPixmap(QPixmap::fromImage(qImg));
+    switch (e->key()) 
+    {
+        case Qt::Key_Control:
+        
+        break;
+        case Qt::Key_Enter:
+        
+        break;        
+    }
+}
+
+void MainWindow::keyReleaseEvent(QKeyEvent *e)
+{
+    switch (e->key()) 
+    {
+        case Qt::Key_Control:
+        
+        break;        
+    }
 }

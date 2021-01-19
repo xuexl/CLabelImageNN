@@ -3,8 +3,6 @@
 
 #include <QMainWindow>
 
-#include<string>
-
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -19,15 +17,17 @@ public:
     ~MainWindow();
     
     
+private:
+    void keyPressEvent(QKeyEvent *e) override;
+    void keyReleaseEvent(QKeyEvent *e) override;
     
 private:
     Ui::MainWindow *ui;
     
     void getImageList();
     
-
-private slots:
-    void showImage(std::string fileName);
+signals:
+    
     
 };
 #endif // MAINWINDOW_H

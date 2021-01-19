@@ -24,6 +24,7 @@ set(PROJECT_SOURCES
         Config.h
         ImageViewer.h
         ImageViewer.cxx
+        Cout.h
 )
 
 add_executable(labelimage ${PROJECT_SOURCES})

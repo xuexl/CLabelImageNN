@@ -119,9 +119,12 @@
            </widget>
           </item>
           <item>
-           <widget class="QLabel" name="lb_view">
+           <widget class="ImageViewer" name="lb_view">
             <property name="text">
              <string/>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
             </property>
            </widget>
           </item>
@@ -170,6 +173,13 @@
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>ImageViewer</class>
+   <extends>QLabel</extends>
+   <header>ImageViewer.h</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>
