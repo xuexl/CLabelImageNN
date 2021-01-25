@@ -90,43 +90,11 @@
              <property name="bottomMargin">
               <number>0</number>
              </property>
-             <item row="0" column="0">
-              <widget class="QPushButton" name="pb_clearAnchors">
-               <property name="sizePolicy">
-                <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
-                 <horstretch>0</horstretch>
-                 <verstretch>0</verstretch>
-                </sizepolicy>
-               </property>
-               <property name="minimumSize">
-                <size>
-                 <width>0</width>
-                 <height>30</height>
-                </size>
-               </property>
-               <property name="maximumSize">
-                <size>
-                 <width>100</width>
-                 <height>16777215</height>
-                </size>
-               </property>
-               <property name="text">
-                <string>清除锚框</string>
-               </property>
-              </widget>
-             </item>
             </layout>
            </widget>
           </item>
           <item>
-           <widget class="ImageViewer" name="lb_view">
-            <property name="text">
-             <string/>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
-            </property>
-           </widget>
+           <widget class="ImageViewer2" name="gp_view"/>
           </item>
          </layout>
         </widget>
@@ -148,15 +116,7 @@
         <height>50</height>
        </size>
       </property>
-      <layout class="QVBoxLayout" name="verticalLayout_3">
-       <item>
-        <widget class="QPushButton" name="pb_imageDir">
-         <property name="text">
-          <string>选择图片路径</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
+      <layout class="QVBoxLayout" name="verticalLayout_3"/>
      </widget>
     </item>
    </layout>
@@ -175,9 +135,9 @@
  </widget>
  <customwidgets>
   <customwidget>
-   <class>ImageViewer</class>
-   <extends>QLabel</extends>
-   <header>ImageViewer.h</header>
+   <class>ImageViewer2</class>
+   <extends>QGraphicsView</extends>
+   <header>ImageViewer2.h</header>
   </customwidget>
  </customwidgets>
  <resources/>

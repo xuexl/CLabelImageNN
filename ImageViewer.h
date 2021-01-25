@@ -22,16 +22,22 @@ public:
     
     void showImage(std::string fileName);
     void setCtrlKeyPressing(bool pressing);
+    void clearRects();
+    void saveRects();
     
 private:
+    //
+//    void paintEvent(QPaintEvent *event) override;
     //鼠标按下
     void mousePressEvent(QMouseEvent *e) override;
     //鼠标抬起
     void mouseReleaseEvent(QMouseEvent *e) override;
-
+    //
+    void mouseMoveEvent(QMouseEvent *e) override;
 private:
     std::string fileName;
     cv::Mat image; 
+    cv::Mat imageCopy;
     bool isCtrlKeyPressing = false;
     //define rect
     struct IV_Point
@@ -49,9 +55,9 @@ private:
     IV_Point startPoint;
     IV_Point endPoint;
     //
+    IV_Point currentPos;
+    //
     void showImage();
-    void clear();
-    void save();
     
 };
 

@@ -15,9 +15,8 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-    
-    
-private:
+        
+private:    
     void keyPressEvent(QKeyEvent *e) override;
     void keyReleaseEvent(QKeyEvent *e) override;
     
@@ -25,9 +24,6 @@ private:
     Ui::MainWindow *ui;
     
     void getImageList();
-    
-signals:
-    
     
 };
 #endif // MAINWINDOW_H

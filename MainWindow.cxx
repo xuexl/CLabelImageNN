@@ -14,9 +14,10 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)    
 {
     ui->setupUi(this);
+    setFocusPolicy(Qt::StrongFocus);
     
     connect(ui->lw_images, &QListWidget::itemClicked, [this](auto item){        
-        this->ui->lb_view->showImage(item->text().toStdString());
+        this->ui->gp_view->showImage(item->text().toStdString());
     });
     
     this->getImageList();
@@ -57,23 +58,25 @@ void MainWindow::getImageList()
 
 void MainWindow::keyPressEvent(QKeyEvent *e)
 {
-    switch (e->key()) 
-    {
-        case Qt::Key_Control:
-        
-        break;
-        case Qt::Key_Enter:
-        
-        break;        
-    }
+//    if(e->modifiers() == Qt::ControlModifier)
+//    {
+//        if(e->key() == Qt::Key_C)
+//        {
+//            this->ui->lb_view->clearRects();
+//        }        
+//        else if(e->key() == Qt::Key_S)
+//        {
+//            this->ui->lb_view->saveRects();
+//        }
+//        else
+//            this->ui->lb_view->setCtrlKeyPressing(true);
+//    }    
 }
 
 void MainWindow::keyReleaseEvent(QKeyEvent *e)
-{
-    switch (e->key()) 
-    {
-        case Qt::Key_Control:
-        
-        break;        
-    }
+{        
+//    if(e->key() == Qt::Key_Control)
+//    {
+//        this->ui->lb_view->setCtrlKeyPressing(false);
+//    }
 }
